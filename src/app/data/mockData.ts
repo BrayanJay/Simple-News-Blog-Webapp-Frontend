@@ -5,181 +5,241 @@ export const POSTS: Post[] = [
     id: 1,
     title: 'First Post Title',
     body: 'This is the content of the first post. It contains some text that will be truncated in the card view but fully visible in the details view.',
-    userId: 1
+    userId: 1,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 2,
     title: 'Second Post Title',
     body: 'Content for the second post. This post also has some text that will be truncated in the card view.',
-    userId: 1
+    userId: 1,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 3,
     title: 'Third Post Title',
     body: 'Content for the third post. The text will be truncated in the post list view but will be fully visible when viewing post details.',
-    userId: 2
+    userId: 2,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 4,
     title: 'Fourth Post Title',
     body: 'This is the fourth post in our collection. It has some interesting content that users might want to read in full.',
-    userId: 2
+    userId: 2,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 5,
     title: 'Fifth Post Title',
     body: 'The fifth post with some example text. This text will be cut off in the card view to maintain a clean layout.',
-    userId: 3
+    userId: 3,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 6,
     title: 'Sixth Post Title',
     body: 'Content for the sixth post. This is another example of text that would be truncated in the card layout.',
-    userId: 3
+    userId: 3,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 7,
     title: 'Seventh Post Title',
     body: 'The seventh post contains some very interesting information that users might want to read more about.',
-    userId: 4
+    userId: 4,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 8,
     title: 'Eighth Post Title',
     body: 'This is the eighth post in our application. It covers some topic that users might find interesting.',
-    userId: 4
+    userId: 4,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 9,
     title: 'Ninth Post Title',
     body: 'The ninth post with more example content. This will also be truncated in the post list view.',
-    userId: 5
+    userId: 5,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 10,
     title: 'Tenth Post Title',
     body: 'Content for the tenth post. This marks the end of our first batch of posts.',
-    userId: 5
+    userId: 5,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 11,
     title: 'Eleventh Post Title',
     body: 'This is the eleventh post. It will be loaded when the user clicks the "Load More" button.',
-    userId: 6
+    userId: 6,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 12,
     title: 'Twelfth Post Title',
     body: 'The twelfth post with more example content. Part of the second batch of posts.',
-    userId: 6
+    userId: 6,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 13,
     title: 'Thirteenth Post Title',
     body: 'Content for the thirteenth post. Another post in the second batch loaded after clicking "Load More".',
-    userId: 7
+    userId: 7,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 14,
     title: 'Fourteenth Post Title',
     body: 'The fourteenth post containing some interesting information for our users to read.',
-    userId: 7
+    userId: 7,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 15,
     title: 'Fifteenth Post Title',
     body: 'This is the fifteenth post in our application. More example content for demonstration.',
-    userId: 8
+    userId: 8,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 16,
     title: 'Sixteenth Post Title',
     body: 'Content for the sixteenth post. More example text for our posts list.',
-    userId: 8
+    userId: 8,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 17,
     title: 'Seventeenth Post Title',
     body: 'The seventeenth post with more interesting content for our users to explore.',
-    userId: 9
+    userId: 9,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 18,
     title: 'Eighteenth Post Title',
     body: 'Content for the eighteenth post. Another example of truncated text in the card view.',
-    userId: 9
+    userId: 9,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 19,
     title: 'Nineteenth Post Title',
     body: 'The nineteenth post containing some fascinating information that users might want to read about.',
-    userId: 10
+    userId: 10,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 20,
     title: 'Twentieth Post Title',
     body: 'This is the twentieth post. It marks the end of our second batch of posts.',
-    userId: 10
+    userId: 10,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 21,
     title: 'Twenty-First Post Title',
     body: 'Content for the twenty-first post. Part of the third batch of posts loaded after clicking "Load More" again.',
-    userId: 1
+    userId: 1,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 22,
     title: 'Twenty-Second Post Title',
     body: 'The twenty-second post with more example content for our application.',
-    userId: 2
+    userId: 2,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 23,
     title: 'Twenty-Third Post Title',
     body: 'This is the twenty-third post. It contains more example text for demonstration purposes.',
-    userId: 3
+    userId: 3,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 24,
     title: 'Twenty-Fourth Post Title',
     body: 'Content for the twenty-fourth post. Another post in our collection of examples.',
-    userId: 4
+    userId: 4,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 25,
     title: 'Twenty-Fifth Post Title',
     body: 'The twenty-fifth post containing some interesting information for our users.',
-    userId: 5
+    userId: 5,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 26,
     title: 'Twenty-Sixth Post Title',
     body: 'This is the twenty-sixth post in our application. More example content.',
-    userId: 6
+    userId: 6,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 27,
     title: 'Twenty-Seventh Post Title',
     body: 'Content for the twenty-seventh post. More example text for our posts list.',
-    userId: 7
+    userId: 7,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 28,
     title: 'Twenty-Eighth Post Title',
     body: 'The twenty-eighth post with more interesting content for users to read.',
-    userId: 8
+    userId: 8,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 29,
     title: 'Twenty-Ninth Post Title',
     body: 'Content for the twenty-ninth post. Another example of text in our application.',
-    userId: 9
+    userId: 9,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   },
   {
     id: 30,
     title: 'Thirtieth Post Title',
     body: 'This is the thirtieth and final post in our collection. It marks the end of all available posts.',
-    userId: 10
+    userId: 10,
+    tags: ['tag1', 'tag2', 'tag3'],
+    createdAt: '2025-05-20 12:00:00'
   }
 ];
 
@@ -226,7 +286,6 @@ export const COMMENTS: Comment[] = [
     email: 'user6@example.com',
     body: 'A third commenter shares their thoughts on post 2.'
   },
-  // Continue with comments for other posts
   {
     id: 7,
     postId: 3,
@@ -248,7 +307,6 @@ export const COMMENTS: Comment[] = [
     email: 'user9@example.com',
     body: 'A third comment on post 3, adding more to the conversation.'
   },
-  // And so on for each post...
   {
     id: 10,
     postId: 4,
@@ -293,7 +351,7 @@ export const COMMENTS: Comment[] = [
   }
 ];
 
-// Add comments for all posts (3-5 comments per post)
+//Randomly select comments for posts for dummy data
 for (let i = 6; i <= 30; i++) {
   for (let j = 1; j <= 3 + Math.floor(Math.random() * 3); j++) {
     const commentId = COMMENTS.length + 1;

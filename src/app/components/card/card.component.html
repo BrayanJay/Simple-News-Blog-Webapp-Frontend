@@ -3,6 +3,12 @@
   <h2 class="post-title">{{ post.title }}</h2>
   <p class="post-body">{{ truncatedBody }}</p> <!-- If the content is too long, it will be truncated to 100 characters. -->
 
-  <button class="read-more-btn">›</button>
+  <div class="post-tags">
+    <p class="post-tag-element" *ngFor="let tag of post.tags">{{ tag }}</p>
+  </div>
 
+  <div class="post-bottom-row">
+  <p class="post-created-date">Created at: {{ post.createdAt | date: 'dd/MM/yyyy hh:mm:ss' }}</p>
+  <button class="read-more-btn">›</button>
+  </div>
 </div>

@@ -1,8 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../../models/post.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card',
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
