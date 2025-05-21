@@ -1,0 +1,24 @@
+<div class="post-details-container" *ngIf="!isLoading">
+
+  <!-- Back to All Posts -->
+  <button class="back-button" (click)="onBack()">← Back to Posts</button>
+
+  <!-- Post Details Section -->
+  <div class="post-details-layout">
+    <div class="post-content">
+      <h1 class="post-title">{{ post.title }}</h1>
+      <img class="post-picture" src="https://placehold.co/1000x400" alt="Picture of {{ post.title }}">
+      <p class="post-body">{{ post.body }}</p>
+    </div>
+
+  <!-- Comments Section -->
+    <div class="post-comments">
+      <app-comments-array [comments]="comments"></app-comments-array>
+    </div>
+  </div>
+</div>
+
+<!-- Loading Text -->
+<div class="loading" *ngIf="isLoading">
+  Loading post details...
+</div>

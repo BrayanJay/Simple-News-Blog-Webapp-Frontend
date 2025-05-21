@@ -1,0 +1,37 @@
+<div class="main-container">
+  <div class="fade-in" [class.visible]="isVisible">
+  <!-- Post list view -->
+  <div class="post-list-container" *ngIf="selectedPostId === null">
+    <h1 class="page-title">Sample Posts</h1>
+
+    <div class="post-grid">
+      <div class="post-card-wrapper" *ngFor="let post of posts">
+        <app-card
+          [post]="post"
+          (postSelected)="onPostSelected($event)">
+        </app-card>
+      </div>
+    </div>
+
+    <div class="load-more-container" *ngIf="hasMorePosts">
+      <button
+        class="load-more-button"
+        (click)="loadMorePosts()"
+        [disabled]="isLoading">
+        {{ isLoading ? 'Loading...' : 'Load More' }}
+      </button>
+    </div>
+
+    <div class="no-more-posts" *ngIf="posts.length > 0 && !hasMorePosts">
+      No more posts to load.
+    </div>
+  </div>
+
+  <!-- Post details view -->
+  <app-card-details
+    *ngIf="selectedPostId !== null"
+    [postId]="selectedPostId"
+    (backToList)="onBackToList()">
+  </app-card-details>
+  </div>
+</div>

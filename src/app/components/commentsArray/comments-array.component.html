@@ -1,0 +1,17 @@
+<div class="comments-container">
+  <h3 class="comments-title">Comments</h3>
+
+  <div class="comments-list" *ngIf="comments.length > 0">
+    <!-- Calling comment component -->
+    <app-comment
+      *ngFor="let comment of comments"
+      [comment]="comment">
+    </app-comment>
+
+  </div>
+
+    <!-- Empty Comment Handling -->
+  <div class="no-comments" *ngIf="comments.length === 0">
+    No comments for this post yet.
+  </div>
+</div>
