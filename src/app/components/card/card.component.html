@@ -1,14 +1,67 @@
-<div class="post-card" (click)="onPostClick()">
 
-  <h2 class="post-title">{{ post.title }}</h2>
-  <p class="post-body">{{ truncatedBody }}</p> <!-- If the content is too long, it will be truncated to 100 characters. -->
+<article class="post-card"
+         tabindex="0"
+         role="button"
+         (click)="onPostClick()"
+         (keyup.enter)="onPostClick()"
+         (keyup.space)="onPostClick()"
+         [attr.aria-label]="'Read article: ' + post.title">
 
-  <div class="post-tags">
-    <p class="post-tag-element" *ngFor="let tag of post.tags">{{ tag }}</p>
+  <!-- Image Container -->
+  <div class="post-image-container">
+    <img class="post-image"
+         src="assets/sample-post-768x500.png"
+         [alt]="'News image for ' + post.title"
+         loading="lazy" />
+    <div class="image-overlay"></div>
+    <div class="post-category" *ngIf="post.tags && post.tags.length > 0">
+      {{ post.tags[0] }}
+    </div>
   </div>
 
-  <div class="post-bottom-row">
-  <p class="post-created-date">Created at: {{ post.createdAt | date: 'dd/MM/yyyy' }}</p>
-  <button class="read-more-btn">›</button>
+  <!-- Content Container -->
+  <div class="post-content">
+    <div class="post-meta">
+      <time class="post-date" [attr.datetime]="post.createdAt">
+        {{ post.createdAt | date: 'MMM dd, yyyy' }}
+      </time>
+      <span class="reading-time">{{ estimatedReadTime }} min read</span>
+    </div>
+
+    <h2 class="post-title">{{ post.title }}</h2>
+
+    <p class="post-excerpt">{{ truncatedBody }}</p>
+
+    <!-- Tags -->
+    <div class="post-tags" *ngIf="post.tags && post.tags.length > 1">
+      <span class="post-tag" *ngFor="let tag of post.tags.slice(1, 4)" [title]="tag">
+        {{ tag }}
+      </span>
+      <span class="more-tags" *ngIf="post.tags.length > 4">
+        +{{ post.tags.length - 3 }} more
+      </span>
+    </div>
   </div>
-</div>
+
+  <!-- Action Footer -->
+  <div class="post-footer">
+    <button class="read-more-btn"
+            [attr.aria-label]="'Read full article: ' + post.title"
+            type="button">
+      <span class="btn-text">Read More</span>
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M5 12h14m-7-7l7 7-7 7"/>
+      </svg>
+    </button>
+
+    <div class="engagement-stats">
+      <div class="stat-item" title="Views">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <span>{{ formatNumber(post.id * 47) }}</span>
+      </div>
+    </div>
+  </div>
+</article>

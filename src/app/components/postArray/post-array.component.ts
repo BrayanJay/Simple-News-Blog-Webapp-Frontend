@@ -53,4 +53,8 @@ export class PostArrayComponent implements OnInit{
   loadMorePosts(): void {
     this.loadPosts();
   }
+
+  trackByPostId(index: number, post: Post): number {
+    return post.id;
+  }
 }

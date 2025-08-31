@@ -1,37 +1,82 @@
 <div class="main-container">
   <div class="fade-in" [class.visible]="isVisible">
-  <!-- Post list view -->
-  <div class="post-list-container" *ngIf="selectedPostId === null">
-    <h1 class="page-title">Sample Posts</h1>
+    <!-- Post list view -->
+    <div class="post-list-container" *ngIf="selectedPostId === null">
 
-    <div class="post-grid">
-      <div class="post-card-wrapper" *ngFor="let post of posts">
-        <app-card
-          [post]="post"
-          (postSelected)="onPostSelected($event)">
-        </app-card>
+      <!-- Header Section -->
+      <div class="header-section">
+        <h1 class="page-title">Latest News</h1>
+        <p class="page-subtitle">Stay updated with the latest headlines and stories from around the world.</p>
+
+        <!-- Stats/Info Bar -->
+        <div class="info-bar" *ngIf="posts.length > 0">
+          <div class="posts-count">
+            <span class="count-number">{{ posts.length }}</span>
+            <span class="count-label">{{ posts.length === 1 ? 'Article' : 'Articles' }} loaded</span>
+          </div>
+          <div class="loading-indicator" *ngIf="isLoading">
+            <div class="spinner"></div>
+            <span>Loading more articles...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Posts Grid -->
+      <div class="post-grid" [class.loading]="isLoading">
+        <div class="post-card-wrapper"
+             *ngFor="let post of posts; trackBy: trackByPostId; let i = index"
+             [style.animation-delay.ms]="i * 100">
+          <app-card
+            [post]="post"
+            (postSelected)="onPostSelected($event)">
+          </app-card>
+        </div>
+      </div>
+
+      <!-- Load More Section -->
+      <div class="load-more-section" *ngIf="hasMorePosts || (!hasMorePosts && posts.length > 0)">
+        <div class="load-more-container" *ngIf="hasMorePosts">
+          <button
+            class="load-more-button"
+            (click)="loadMorePosts()"
+            [disabled]="isLoading"
+            [attr.aria-label]="isLoading ? 'Loading more posts' : 'Load more posts'">
+            <span class="button-text">{{ isLoading ? 'Loading...' : 'Load More Articles' }}</span>
+            <svg class="button-icon" *ngIf="!isLoading" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+            <div class="button-spinner" *ngIf="isLoading"></div>
+          </button>
+        </div>
+
+        <div class="no-more-posts" *ngIf="posts.length > 0 && !hasMorePosts">
+          <div class="end-message">
+            <svg class="end-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>You've reached the end! All {{ posts.length }} articles loaded.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" *ngIf="posts.length === 0 && !isLoading">
+        <div class="empty-content">
+          <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+            <path d="M8 12h.01M12 12h.01M16 12h.01"/>
+          </svg>
+          <h3>No articles available</h3>
+          <p>Check back later for the latest news updates.</p>
+        </div>
       </div>
     </div>
 
-    <div class="load-more-container" *ngIf="hasMorePosts">
-      <button
-        class="load-more-button"
-        (click)="loadMorePosts()"
-        [disabled]="isLoading">
-        {{ isLoading ? 'Loading...' : 'Load More' }}
-      </button>
-    </div>
-
-    <div class="no-more-posts" *ngIf="posts.length > 0 && !hasMorePosts">
-      No more posts to load.
-    </div>
-  </div>
-
-  <!-- Post details view -->
-  <app-card-details
-    *ngIf="selectedPostId !== null"
-    [postId]="selectedPostId"
-    (backToList)="onBackToList()">
-  </app-card-details>
+    <!-- Post details view -->
+    <app-card-details
+      *ngIf="selectedPostId !== null"
+      [postId]="selectedPostId"
+      (backToList)="onBackToList()">
+    </app-card-details>
   </div>
 </div>

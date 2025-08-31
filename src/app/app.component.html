@@ -1,7 +1,15 @@
 <div class="app-container">
+
   <header class="app-header">
     <div class="header-content">
-      <h1 class="app-title">My Blog</h1>
+      <div class="header-left">
+        <img src="assets/logos/logo.png" alt="News Blog Logo" class="app-logo" />
+        <h1 class="app-title">News Blog</h1>
+      </div>
+      <nav class="main-nav">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/news" routerLinkActive="active">News</a>
+      </nav>
     </div>
   </header>
 
@@ -11,7 +19,10 @@
 
   <footer class="app-footer">
     <div class="footer-content">
-      <p>&copy; 2025 My Blog by Brayan Jayawardhana</p>
+      <div class="footer-logo">
+        <img src="assets/logos/logo.svg" alt="News Blog" class="footer-logo-img" />
+      </div>
+      <p>&copy; 2025 News Blog by Brayan Jayawardhana</p>
     </div>
   </footer>
 </div>
